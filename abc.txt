@@ -1,0 +1,6 @@
+--> Kích hoạt môi trường
+cd django-invoice-master
+env\Scripts\activate
+
+--> chạy server
+python manage.py runserver
