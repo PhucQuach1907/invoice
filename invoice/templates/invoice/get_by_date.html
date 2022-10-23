@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+<h5 class="text-center"></h5>
+<p class="text-right">Date: {{ query_date }}</p>
+
+{% if query_result %}
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Cost price</th>
+      <th>Selling price</th>
+    </tr>
+  </thead>
+  {% for item in query_result %}
+  <tr>
+    <td>{{item.product_name}}</td>
+    <td>{{item.cost_price}}</td>
+    <td>{{item.selling_price}}</td>
+  </tr>
+  {% endfor %}
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Expense Name</th>
+        <th>Expense Amount</th>
+      </tr>
+    </thead>
+    {% for expense in query_result2 %}
+    <tr>
+      <td>{{expense.expense_name}}</td>
+      <td>{{expense.expense_amount}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p><b>Total Selling: {{amount}}</b></p>
+  {% else %}
+  <div class="alert alert-danger" role="alert">
+    <b>No Records Found.</b>
+  </div>
+  {% endif %}
+</table>
+{% endblock content %}

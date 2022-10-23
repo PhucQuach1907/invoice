@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+
+<p class="text-right">Date: {% now "jS F Y" %}</p>
+<div class="form-group mb-2">
+  <form method="POST" action="/search/">
+    {% csrf_token %}
+    <input
+      type="date"
+      name="search_by_date"
+      required
+      class="form-control mb-1"
+    />
+    <button type="submit" class="btn btn-primary btn-sm">Search</button>
+  </form>
+</div>
+<h5 class="text-center"></h5>
+
+<h5>Add Product</h5>
+<div class="form-group">
+  <form method="POST">
+    {% csrf_token %} {{ form }}
+    <button type="submit" class="btn btn-primary">Add Item</button>
+  </form>
+</div>
+{% endblock content %}
