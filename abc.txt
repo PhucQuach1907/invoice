@@ -1,6 +1,12 @@
 --> Kích hoạt môi trường
-cd django-invoice-master
+virtualenv env
 env\Scripts\activate
+
+--> cài Django
+pip install django
+
+--> Tạo project
+django-admin startproject <name>
 
 --> chạy server
 python manage.py runserver
