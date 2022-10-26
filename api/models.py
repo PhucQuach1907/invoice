@@ -9,3 +9,6 @@ class Invoice(models.Model):
 
     def __str__(self):
         return f'{self.product_name} added.'
+
+class Screenshot(models.Model):
+    screenshot = models.ImageField(upload_to='img/screenshots/', help_text='Html2canvas screenshot')

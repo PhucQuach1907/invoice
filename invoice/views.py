@@ -9,6 +9,11 @@ import datetime
 from .models import Invoice, Expense
 from .forms import AddItemForm, AddExpenseForm
 
+import random
+import pyautogui
+from django.conf import settings
+from django.contrib import messages
+
 
 class ListSoldItems(ListView):
     model = Invoice
@@ -80,4 +85,13 @@ def get_by_date(request):
             return HttpResponse('No Data Found!')
     else:
         return HttpResponse('No Data Found!')
+
+# def home(request):
+#    if request.method == "POST":
+#       ss = pyautogui.screenshot()
+#       img = f'myimg{random.randint(1000,9999)}.png'
+#       ss.save(settings.MEDIA_ROOT/img)
+#       messages.success(request,'screenshot has been taken')
+#       return render(request,'base.html',{'img':img})
+#    return render(request,'base.html')
 

@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'invoice.apps.InvoiceConfig',
     'api.apps.ApiConfig',
     'rest_framework',
+    # 'media.apps.MediaConfig'
 ]
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR/'media'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,6 +62,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        # 'DIRS': [os.path.join(BASE_DIR, 'media')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
