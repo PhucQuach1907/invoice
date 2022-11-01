@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Cost price</th>
+      <th>Selling price</th>
+      <th>Day added</th>
+    </tr>
+  </thead>
+  {% for item in object_list %}
+  <tr>
+    <td>{{item.product_name}}</td>
+    <td>{{item.cost_price}}</td>
+    <td>{{item.selling_price}}</td>
+    <td>{{item.purchase_date}}</td>
+  </tr>
+  {% endfor %}
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Expense Name</th>
+        <th>Expense Amount</th>
+        <th>Day Added</th>
+      </tr>
+    </thead>
+    {% for expense in expenses %}
+    <tr>
+      <td>{{expense.expense_name}}</td>
+      <td>{{expense.expense_amount}}</td>
+      <td>{{expense.expense_date}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</table>
+{% endblock content %}

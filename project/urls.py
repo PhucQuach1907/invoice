@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('invoice.urls')),
     path('api/', include('api.urls')),    
-    # path('', include('media.urls'))
 ]
